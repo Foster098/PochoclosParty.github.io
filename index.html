@@ -93,7 +93,7 @@ nav a:hover { color: var(--text); }
 .pricing-section { padding: 5rem 2.5rem; border-top: 1px solid var(--border); }
 .section-label { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
 .section-title { font-family: var(--font-display); font-size: clamp(2.5rem,5vw,4.5rem); letter-spacing: 0.06em; margin-bottom: 3rem; }
-.pricing-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; }
 .pricing-card { background: var(--card); border: 1px solid var(--border); padding: 1.8rem 1.4rem; position: relative; transition: border-color 0.2s; }
 .pricing-card.featured { border-color: var(--accent); }
 .pricing-card.featured::before { content: 'MÁS POPULAR'; position: absolute; top: -1px; left: 50%; transform: translateX(-50%); font-size: 0.55rem; letter-spacing: 0.15em; background: var(--accent); color: #080808; padding: 0.2rem 0.8rem; font-weight: 500; }
@@ -270,29 +270,23 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem; display: flex; ju
   <div class="section-label">Descuentos y paquetes</div>
   <div class="section-title">SISTEMA DE PRECIOS</div>
   <div class="pricing-grid">
-    <div class="pricing-card">
-      <div class="pricing-range">1–9 Piezas</div>
-      <div class="pricing-price">$290</div>
-      <div class="pricing-unit">por unidad</div>
-      <ul class="pricing-perks"><li>Precio unitario estándar</li></ul>
-    </div>
     <div class="pricing-card featured">
-      <div class="pricing-range">10–29 Piezas</div>
-      <div class="pricing-price">$210</div>
-      <div class="pricing-unit">por unidad · ahorro 18%</div>
-      <ul class="pricing-perks"><li>Ahorro del 18%</li><li>Soporte prioritario</li></ul>
+      <div class="pricing-range">10 Piezas</div>
+      <div class="pricing-price">$2,900</div>
+      <div class="pricing-unit">$290 por pieza</div>
+      <ul class="pricing-perks"><li>Paquete inicial</li><li>Soporte prioritario</li></ul>
     </div>
     <div class="pricing-card">
-      <div class="pricing-range">30–49 Piezas</div>
-      <div class="pricing-price">$174</div>
-      <div class="pricing-unit">por unidad · ahorro 25%</div>
-      <ul class="pricing-perks"><li>Ahorro del 25%</li><li>Descuento adicional</li></ul>
+      <div class="pricing-range">30 Piezas</div>
+      <div class="pricing-price">$8,700</div>
+      <div class="pricing-unit">$290 por pieza</div>
+      <ul class="pricing-perks"><li>Paquete intermedio</li><li>Descuento adicional</li></ul>
     </div>
     <div class="pricing-card">
-      <div class="pricing-range">50+ Piezas</div>
-      <div class="pricing-price">$189</div>
-      <div class="pricing-unit">precio mayoreo · ahorro 35%</div>
-      <ul class="pricing-perks"><li>Precio mayoreo</li><li>Ahorro del 35%</li></ul>
+      <div class="pricing-range">50 Piezas</div>
+      <div class="pricing-price">$14,500</div>
+      <div class="pricing-unit">$290 por pieza</div>
+      <ul class="pricing-perks"><li>Paquete mayoreo</li><li>Mejor precio total</li></ul>
     </div>
   </div>
 </section>
@@ -333,7 +327,7 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem; display: flex; ju
         <div class="qty-label">Cantidad</div>
         <div class="qty-wrap">
           <button class="qty-btn" onclick="changeQty(-1)">−</button>
-          <div class="qty-num" id="qty-kitsune">1</div>
+          <div class="qty-num" id="qty-kitsune">10</div>
           <button class="qty-btn" onclick="changeQty(1)">+</button>
         </div>
       </div>
@@ -344,10 +338,9 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem; display: flex; ju
       </div>
 
       <div class="discount-bar" id="tiers-kitsune">
-        <span class="disc-pill active-tier" data-min="1" data-max="9">1–9 · $290/u</span>
-        <span class="disc-pill" data-min="10" data-max="29">10–29 · $210/u (−18%)</span>
-        <span class="disc-pill" data-min="30" data-max="49">30–49 · $174/u (−25%)</span>
-        <span class="disc-pill" data-min="50" data-max="9999">50+ · $189/u (−35%)</span>
+        <span class="disc-pill active-tier" data-min="10" data-max="29">10 pzas · $2,900</span>
+        <span class="disc-pill" data-min="30" data-max="49">30 pzas · $8,700</span>
+        <span class="disc-pill" data-min="50" data-max="9999">50 pzas · $14,500</span>
       </div>
 
       <button class="btn-primary" style="margin-top:2rem;" onclick="addToCart('kitsune','Kitsune Mask Tee')">Pedir ahora via WhatsApp</button>
@@ -380,7 +373,7 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem; display: flex; ju
         <div class="qty-label">Cantidad</div>
         <div class="qty-wrap">
           <button class="qty-btn" onclick="changeQty(-1)">−</button>
-          <div class="qty-num" id="qty-samurai">1</div>
+          <div class="qty-num" id="qty-samurai">10</div>
           <button class="qty-btn" onclick="changeQty(1)">+</button>
         </div>
       </div>
@@ -391,10 +384,9 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem; display: flex; ju
       </div>
 
       <div class="discount-bar" id="tiers-samurai">
-        <span class="disc-pill active-tier" data-min="1" data-max="9">1–9 · $290/u</span>
-        <span class="disc-pill" data-min="10" data-max="29">10–29 · $210/u (−18%)</span>
-        <span class="disc-pill" data-min="30" data-max="49">30–49 · $174/u (−25%)</span>
-        <span class="disc-pill" data-min="50" data-max="9999">50+ · $189/u (−35%)</span>
+        <span class="disc-pill active-tier" data-min="10" data-max="29">10 pzas · $2,900</span>
+        <span class="disc-pill" data-min="30" data-max="49">30 pzas · $8,700</span>
+        <span class="disc-pill" data-min="50" data-max="9999">50 pzas · $14,500</span>
       </div>
 
       <button class="btn-primary" style="margin-top:2rem;" onclick="addToCart('samurai','Bushido Katana Tee')">Pedir ahora via WhatsApp</button>
@@ -427,7 +419,7 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem; display: flex; ju
         <div class="qty-label">Cantidad</div>
         <div class="qty-wrap">
           <button class="qty-btn" onclick="changeQty(-1)">−</button>
-          <div class="qty-num" id="qty-cats">1</div>
+          <div class="qty-num" id="qty-cats">10</div>
           <button class="qty-btn" onclick="changeQty(1)">+</button>
         </div>
       </div>
@@ -438,10 +430,9 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem; display: flex; ju
       </div>
 
       <div class="discount-bar" id="tiers-cats">
-        <span class="disc-pill active-tier" data-min="1" data-max="9">1–9 · $290/u</span>
-        <span class="disc-pill" data-min="10" data-max="29">10–29 · $210/u (−18%)</span>
-        <span class="disc-pill" data-min="30" data-max="49">30–49 · $174/u (−25%)</span>
-        <span class="disc-pill" data-min="50" data-max="9999">50+ · $189/u (−35%)</span>
+        <span class="disc-pill active-tier" data-min="10" data-max="29">10 pzas · $2,900</span>
+        <span class="disc-pill" data-min="30" data-max="49">30 pzas · $8,700</span>
+        <span class="disc-pill" data-min="50" data-max="9999">50 pzas · $14,500</span>
       </div>
 
       <button class="btn-primary" style="margin-top:2rem;" onclick="addToCart('cats','Yin Yang Cats Tee')">Pedir ahora via WhatsApp</button>
@@ -451,24 +442,25 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem; display: flex; ju
 
 <script>
 const PRICES = [
-  {min:1,  max:9,    price:290,  label:"Precio unitario estándar"},
-  {min:10, max:29,   price:210,  label:"Ahorro del 18% — paquete"},
-  {min:30, max:49,   price:174,  label:"Ahorro del 25% — paquete"},
-  {min:50, max:9999, price:189,  label:"Precio mayoreo — ahorro 35%"}
+  {min:10, max:29,   price:290,  label:"Paquete 10 piezas — $2,900 total"},
+  {min:30, max:49,   price:290,  label:"Paquete 30 piezas — $8,700 total"},
+  {min:50, max:9999, price:290,  label:"Paquete 50 piezas — $14,500 total"}
 ];
+
+function getMinQty() { return 10; }
 
 let currentProduct = null;
 let currentQty = 1;
 
 function getPrice(qty) {
-  return PRICES.find(t => qty >= t.min && qty <= t.max);
+  return PRICES.find(t => qty >= t.min && qty <= t.max) || PRICES[0];
 }
 
 function openProduct(id) {
   document.getElementById('main-page').style.display = 'none';
   document.getElementById('detail-'+id).classList.add('active');
   currentProduct = id;
-  currentQty = 1;
+  currentQty = 10;
   updatePrice();
   window.scrollTo(0,0);
 }
@@ -483,7 +475,7 @@ function closeProduct() {
 }
 
 function changeQty(delta) {
-  currentQty = Math.max(1, currentQty + delta);
+  currentQty = Math.max(10, currentQty + delta);
   document.getElementById('qty-'+currentProduct).textContent = currentQty;
   updatePrice();
 }
