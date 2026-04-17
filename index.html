@@ -327,7 +327,7 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem; display: flex; ju
         <div class="qty-label">Cantidad</div>
         <div class="qty-wrap">
           <button class="qty-btn" onclick="changeQty(-1)">−</button>
-          <div class="qty-num" id="qty-kitsune">10</div>
+          <div class="qty-num" id="qty-kitsune">1</div>
           <button class="qty-btn" onclick="changeQty(1)">+</button>
         </div>
       </div>
@@ -338,9 +338,10 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem; display: flex; ju
       </div>
 
       <div class="discount-bar" id="tiers-kitsune">
-        <span class="disc-pill active-tier" data-min="10" data-max="29">10 pzas · $2,900</span>
-        <span class="disc-pill" data-min="30" data-max="49">30 pzas · $8,700</span>
-        <span class="disc-pill" data-min="50" data-max="9999">50 pzas · $14,500</span>
+        <span class="disc-pill active-tier" data-min="1" data-max="9">1–9 · $290/u</span>
+        <span class="disc-pill" data-min="10" data-max="29">10–29 · $210/u (−18%)</span>
+        <span class="disc-pill" data-min="30" data-max="49">30–49 · $174/u (−25%)</span>
+        <span class="disc-pill" data-min="50" data-max="9999">50+ · $189/u (−35%)</span>
       </div>
 
       <button class="btn-primary" style="margin-top:2rem;" onclick="addToCart('kitsune','Kitsune Mask Tee')">Pedir ahora via WhatsApp</button>
@@ -373,7 +374,7 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem; display: flex; ju
         <div class="qty-label">Cantidad</div>
         <div class="qty-wrap">
           <button class="qty-btn" onclick="changeQty(-1)">−</button>
-          <div class="qty-num" id="qty-samurai">10</div>
+          <div class="qty-num" id="qty-samurai">1</div>
           <button class="qty-btn" onclick="changeQty(1)">+</button>
         </div>
       </div>
@@ -384,9 +385,10 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem; display: flex; ju
       </div>
 
       <div class="discount-bar" id="tiers-samurai">
-        <span class="disc-pill active-tier" data-min="10" data-max="29">10 pzas · $2,900</span>
-        <span class="disc-pill" data-min="30" data-max="49">30 pzas · $8,700</span>
-        <span class="disc-pill" data-min="50" data-max="9999">50 pzas · $14,500</span>
+        <span class="disc-pill active-tier" data-min="1" data-max="9">1–9 · $290/u</span>
+        <span class="disc-pill" data-min="10" data-max="29">10–29 · $210/u (−18%)</span>
+        <span class="disc-pill" data-min="30" data-max="49">30–49 · $174/u (−25%)</span>
+        <span class="disc-pill" data-min="50" data-max="9999">50+ · $189/u (−35%)</span>
       </div>
 
       <button class="btn-primary" style="margin-top:2rem;" onclick="addToCart('samurai','Bushido Katana Tee')">Pedir ahora via WhatsApp</button>
@@ -419,7 +421,7 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem; display: flex; ju
         <div class="qty-label">Cantidad</div>
         <div class="qty-wrap">
           <button class="qty-btn" onclick="changeQty(-1)">−</button>
-          <div class="qty-num" id="qty-cats">10</div>
+          <div class="qty-num" id="qty-cats">1</div>
           <button class="qty-btn" onclick="changeQty(1)">+</button>
         </div>
       </div>
@@ -430,9 +432,10 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem; display: flex; ju
       </div>
 
       <div class="discount-bar" id="tiers-cats">
-        <span class="disc-pill active-tier" data-min="10" data-max="29">10 pzas · $2,900</span>
-        <span class="disc-pill" data-min="30" data-max="49">30 pzas · $8,700</span>
-        <span class="disc-pill" data-min="50" data-max="9999">50 pzas · $14,500</span>
+        <span class="disc-pill active-tier" data-min="1" data-max="9">1–9 · $290/u</span>
+        <span class="disc-pill" data-min="10" data-max="29">10–29 · $210/u (−18%)</span>
+        <span class="disc-pill" data-min="30" data-max="49">30–49 · $174/u (−25%)</span>
+        <span class="disc-pill" data-min="50" data-max="9999">50+ · $189/u (−35%)</span>
       </div>
 
       <button class="btn-primary" style="margin-top:2rem;" onclick="addToCart('cats','Yin Yang Cats Tee')">Pedir ahora via WhatsApp</button>
@@ -442,12 +445,11 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem; display: flex; ju
 
 <script>
 const PRICES = [
-  {min:10, max:29,   price:290,  label:"Paquete 10 piezas — $2,900 total"},
-  {min:30, max:49,   price:290,  label:"Paquete 30 piezas — $8,700 total"},
-  {min:50, max:9999, price:290,  label:"Paquete 50 piezas — $14,500 total"}
+  {min:1,  max:9,    price:290,  label:"Precio unitario estándar"},
+  {min:10, max:29,   price:210,  label:"Ahorro del 18% — paquete"},
+  {min:30, max:49,   price:174,  label:"Ahorro del 25% — paquete"},
+  {min:50, max:9999, price:189,  label:"Precio mayoreo — ahorro 35%"}
 ];
-
-function getMinQty() { return 10; }
 
 let currentProduct = null;
 let currentQty = 1;
@@ -460,7 +462,7 @@ function openProduct(id) {
   document.getElementById('main-page').style.display = 'none';
   document.getElementById('detail-'+id).classList.add('active');
   currentProduct = id;
-  currentQty = 10;
+  currentQty = 1;
   updatePrice();
   window.scrollTo(0,0);
 }
@@ -475,7 +477,7 @@ function closeProduct() {
 }
 
 function changeQty(delta) {
-  currentQty = Math.max(10, currentQty + delta);
+  currentQty = Math.max(1, currentQty + delta);
   document.getElementById('qty-'+currentProduct).textContent = currentQty;
   updatePrice();
 }
